@@ -25,7 +25,7 @@ while True:
       addExtrato = "Deposito {depositos}: R${transacao:.2f}".format(depositos =  depositos, transacao =  transacao)
       extrato.append(addExtrato)
       saldo = saldo + transacao
-      print("Seu novo saldo é de : R$:",saldo,",00")
+      print("Seu novo saldo é de : R${saldo:.2f}".format(saldo = saldo))
     elif transacao < 0:
       print("O valor precisa ser um valor inteiro e positivo")
 
@@ -44,7 +44,7 @@ while True:
       extrato.append(addExtrato)
       saldo = saldo - transacao
       print("Voce ainda pode faxer mais : ",(3-saques), " saques" )
-      print("Seu novo saldo é de : R$:",saldo,",00")
+      print("Seu novo saldo é de : R${saldo:.2f}".format(saldo = saldo))
     elif transacao > 500:
       print("O valor máximo do saque é de R$500,00")
     elif transacao> saldo:
