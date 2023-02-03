@@ -676,3 +676,166 @@ Cuidado você está obesidade mórbida''')
 print("="*25)
 
 
+print("""=========================
+===== Exercício  44 =====
+=========================""")
+
+
+print("-=-=-=-=- Gerenciador de compras -=-=-=-=-")
+valor = float(input("Qual é o valor do produto? "))
+pagamento = int(input('''Forma de pagamento:
+[1] – à vista dinheiro: 10% de desconto
+[2]– à vista no cartão: 5% de desconto
+[3]– em até 2x no cartão: preço formal 
+[4]– 3x ou mais no cartão: 20% de juros (max 10)
+Sua escolha: '''))
+
+match pagamento:
+    case 1:
+         print(f'''A vista em dinheiro, desconto 10%:
+O valor do produto, com o desconto fica em: R${valor*0.9:.2f}''')
+    case 2:
+        print(f'''A vista no cartão de crédito, desconto 5%: 
+O valor do produto, com o desconto fica em: R${valor*0.95:.2f}''')
+    case 3:
+        print(f'''O valor em duas vezes no cartão fica:
+Duas parcelas iguais de R${valor/2:.2f}''')
+    case 4:
+        parcelas = int(input("Quantas parcelas? "))
+        valor = valor*1.2
+        if 2 < parcelas < 11:
+            print(f'''O valor será  parcelado em {parcelas}vezes:
+Com os juros o valor fica R${valor:.2f}.
+Dividido em {parcelas} parcelas iguais de {valor/3:.2f}''' )
+        else:
+            print('''Quantidade de parcelas fora  do permitido pelo sistema
+Favor escolher um número entre 3 e 10''')
+    case _:
+        print("valor inválido")
+
+print("="*25)
+
+import random
+print("""=========================
+===== Exercício  45 =====
+=========================""")
+print("-=-=-=-=- Jokenpo -=-=-=-=-")
+itens = ('Pedra','Papel','Tesoura')
+eu = int(input('''Vamos começar o jogo escolha:
+[1] - Pedra
+[2] - Papel
+[3] - Tesoura 
+Sua jogada: '''))-1
+pc = random.randint(0,2)
+
+print(f'''A Sua jogada foi {itens[eu]}.
+A jogada do computador foi {itens[pc]}.''')
+if eu == pc:
+    print ("EMPATE")
+elif (eu == 0 and pc == 1) or (eu == 1 and pc == 2) or (eu == 2 and pc == 0):
+    print (f'{itens[eu]} perde para {itens[pc]} VOCÊ PERDEU!"')
+else:
+    print (f'{itens[eu]} ganha de {itens[pc]} VOCÊ GANHOU')
+    
+print("="*25)
+
+import time 
+print("""===== Exercício  46 =====
+=========================""")
+print("-=-=-=-=- Ano novo -=-=-=-=-")
+print("Começando a contagem regressiva...")
+time.sleep(1)
+for i in range(10,0,-1):
+    time.sleep(1)
+    print(f'{i:2}...')
+
+print("="*25)
+
+print("""===== Exercício  47 =====
+=========================""")
+print("-=-=-=-=- Números pares -=-=-=-=-")
+numeroInicial = int(input("Digite o numero para começar a contagem: "))
+numeroFinal = int(input("Digite o numero para terminar a contagem: "))
+
+if numeroInicial %2 ==0:
+    pass
+else:
+    numeroInicial +=1
+for n in range(numeroInicial,numeroFinal+1,2):
+    print(n)
+    
+
+print("="*25)
+
+
+print("""===== Exercício  48 =====
+=========================""")
+print("-=-=-=-=- Números pares -=-=-=-=-")
+soma = 0
+
+for i in range(1,501):
+    if i %2 ==0:
+        if i %3 ==0:
+            soma += i
+            
+print(f'A soma entre os numeros pares\ndivisiveis por três entre 1 e 500 é {soma}')    
+
+
+print("="*25)
+
+print("""===== Exercício  49 =====
+=========================""")
+print("-=-=-=-=- Números pares -=-=-=-=-")
+
+#Já fiz desse jeito no 9 
+
+
+print("="*25)
+
+
+print("""===== Exercício  50 =====
+=========================""")
+print("-=-=-=-=- Somar pares digitados  -=-=-=-=-")
+numeros = [0,1,2,3,4,5]
+soma = 0
+for i in range(6):
+    numeros[i] = int(input(f"Digite o {i+1}º Número "))
+    if numeros[i]%2 ==0:
+        soma += numeros[i]
+        
+    
+print(f'A soma dos números pares digitados é iguam a: {soma}')
+
+
+print("="*25)
+
+print("""===== Exercício  51 =====
+=========================""")
+print("-=-=-=-=- 10 primeiros termos da P.A.  -=-=-=-=-")
+n1=int(input("Digite o numero que vai iniciar a P.A.: "))
+ns=int(input("Digite a razão da  P.A.: "))
+for i in range(10):
+    print(n1)
+    n1+=ns
+
+
+print("="*25)
+
+print("""===== Exercício  52 =====
+=========================""")
+print("-=-=-=-=- Primo ou não?.  -=-=-=-=-")
+
+numero = int(input("Digite um numero inteiro para saber se ele é primo: "))
+resultado = 0
+contagem = 0
+
+for i in range(1,numero+1):
+    resultado = numero%i
+    if resultado == 0:
+        contagem+=1
+if contagem == 2:
+    print(f'O numero {numero} é primo.')
+else:
+    print(f'O numero {numero} NÃO é primo.')
+    
+print("="*25)
