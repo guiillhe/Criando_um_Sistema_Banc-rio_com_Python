@@ -675,7 +675,6 @@ Cuidado você está obesidade mórbida''')
 
 print("="*25)
 
-
 print("""=========================
 ===== Exercício  44 =====
 =========================""")
@@ -772,13 +771,15 @@ print("""===== Exercício  48 =====
 =========================""")
 print("-=-=-=-=- Números pares -=-=-=-=-")
 soma = 0
+quantidade = 0
 
 for i in range(1,501):
     if i %2 ==0:
         if i %3 ==0:
+			quantidade+=1
             soma += i
             
-print(f'A soma entre os numeros pares\ndivisiveis por três entre 1 e 500 é {soma}')    
+print(f'A soma entre os {quantidade} numeros pares\ndivisiveis por três entre 1 e 500 é {soma}')    
 
 
 print("="*25)
@@ -796,15 +797,15 @@ print("="*25)
 print("""===== Exercício  50 =====
 =========================""")
 print("-=-=-=-=- Somar pares digitados  -=-=-=-=-")
-numeros = [0,1,2,3,4,5]
+cont =0
 soma = 0
 for i in range(6):
-    numeros[i] = int(input(f"Digite o {i+1}º Número "))
-    if numeros[i]%2 ==0:
-        soma += numeros[i]
-        
+    numero= int(input(f"Digite o {i+1}º Número "))
+    if numero %2 ==0:
+        soma += numero
+        cont +=1
     
-print(f'A soma dos números pares digitados é iguam a: {soma}')
+print(f'A soma dos {cont} números pares digitados é iguam a: {soma}')
 
 
 print("="*25)
@@ -837,5 +838,89 @@ if contagem == 2:
     print(f'O numero {numero} é primo.')
 else:
     print(f'O numero {numero} NÃO é primo.')
+    
+print("="*25)
+
+print("""===== Exercício  53 =====
+=========================""")
+print("-=-=-=-=- Detector palindromos  -=-=-=-=-")
+
+frase = str(input("Digite uma frase para testar se é palindromo: "))
+fraseTratada = frase.upper().replace(" ","")
+reverso = frase.upper().replace(" ","")[::-1]
+print(fraseTratada==reverso)
+print("="*25)
+
+from datetime import datetime
+print("""===== Exercício  54 =====
+=========================""")
+print("-=-=-=-=- Maioridades  -=-=-=-=-")
+anoAtual = datetime.now()
+anoAtual = anoAtual.year
+maiores =0
+menores =0
+for i in range(7):
+    nascimento = int(input(f"Digite a {i+1}ª data de nascimento: "))
+    print(f'Digite a {i+1}ª data de nascimento:{nascimento}')
+    if anoAtual-nascimento >17:
+        maiores +=1
+    else:
+        menores +=1
+print(f'Ao todos temos {maiores} maiores e {menores} menores de 18 anos' )
+
+print("="*25)
+
+print("""===== Exercício  55 =====
+=========================""")
+print("-=-=-=-=- Analisador completo  -=-=-=-=-")
+
+maior =0
+menor =0
+for i in range(6):
+    peso = float(input(f"Digite o {i+1}º peso: "))
+   
+    if peso > maior:
+        maior = peso
+    if peso < menor or i==0:
+        menor = peso
+    
+print(f'O maior peso é {maior}Kg e o menor peso é {menor}Kg')
+
+
+print("="*25)
+
+print("""===== Exercício  56 =====
+=========================""")
+print("-=-=-=-=- Analisador completo  -=-=-=-=-")
+
+maiorIdade = 0
+maisVelho = ""
+homens = 0
+mulheres = 0
+nda =0
+mulherAbaixo =0
+somaIdade =0
+for i in range(4):
+    nome = str(input(f"Qual é o {i+1}º nome? "))
+    idade = int(input("Qual é a idade? "))
+    genero = str(input(f"Qual é o gênero? M= masculino F = Feminino")).strip().upper()
+    somaIdade += idade
+    if genero == "M":
+        homens+=1
+    elif genero == "F":
+        mulheres +=1
+    else:
+        nda+=1
+        
+    if maiorIdade < idade and genero == "M":
+        maisVelho = nome
+    
+    if idade>20 and genero == "f":
+        mulherAbaixo +=1
+
+print(f"Ao todo são {homens} homens, {mulheres} mulheres {nda} não binários.\nO homem mais velho é {maisVelho} e temos {mulherAbaixo} mulher(es) com menos de 20 anos")
+    
+        
+        
     
 print("="*25)
