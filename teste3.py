@@ -1295,19 +1295,15 @@ print("""===== Exercício  70 =====
 =========================""")
 print("-=-=-=-=- Analisador de compras-=-=-=-=-")
 
-contador =0
+contador = pro1000 = valorTotal = valorProBarato = 0
 proBarato = ''
-pro1000 = 0
-valorTotal = 0
-valorProBarato = 0
+
+
 while True:
     continuar = 'x'
     item = input('Digite o nome do item: ')
     valor= float(input('Digite o valor do item: R$'))
-    if contador == 0:
-        proBarato = item
-        valorProBarato = valor
-    elif valorProBarato>valor:
+    if contador == 0 or valorProBarato>valor:
         proBarato = item
         valorProBarato = valor
     if valor>1000:
@@ -1322,4 +1318,23 @@ while True:
 print(f'Compra com {contador} produtos no valor de R${valorTotal:.2f} ')
 print(f'Temos {pro1000} que custou mais de R$1000.00')
 print(f'O produto mais barato custou foi  o produto {proBarato} e custou R${valorProBarato:.2f}' )
+print("="*25)
+
+print(f"""===== Exercício  71 =====
+=========================""")
+#Colocar nome do banco
+print("-=-=-=-=- Simulador de caixa eletrônico-=-=-=-=-")
+valor = int(input("Qual o valor a ser sacado? "))
+print(f'''O valor gera um saque de:
+{valor//50} Notas de R$50,00.
+{valor%50//20} Notas de R$20,00
+{valor%50%20//10} Notas de R$10,00
+{valor%50%20%10//5} Notas de R$5,00
+{valor%50%20%10%5//2} Notas de R$2,00
+{valor%50%20%10%5%2//1} Notas de R$1,00
+
+Muito obrigado por usar nossos serviços.
+Tenha um bom dia!!!
+''')
+
 print("="*25)
