@@ -924,3 +924,402 @@ print(f"Ao todo são {homens} homens, {mulheres} mulheres {nda} não binários.\
         
     
 print("="*25)
+
+print("""===== Exercício  57 =====
+=========================""")
+print("-=-=-=-=- Analisador de genero -=-=-=-=-")
+flag = False
+while flag == False:
+    gen = input("Qual é o seu genero? ")
+    if gen in "mMFf":
+        print("Welcome")
+        flag = True
+    else:
+        print("Valor inválido, o valor deve se M para masculino e F para feminino")
+    
+
+print("="*25)
+
+import random 
+print("""===== Exercício  58 =====
+=========================""")
+print("-=-=-=-=- Em qual número estou pensando? -=-=-=-=-")
+pc = random.randint(0,10)
+tentativas = 1
+print(pc)
+
+while True:
+    eu = int(input("Qual é o a sua escolha? "))
+    if eu == pc:
+        print(f'Parabéns você acertou em {tentativas} tentativas')
+        break
+    elif eu > pc:
+        print(f"O valor que eu pensei é menor que {eu}")
+        tentativas +=1
+    elif eu < pc:
+        print(f"O valor que eu pensei é maior que {eu}")
+        tentativas +=1
+        
+        
+    
+
+print("="*25)
+
+
+print("""===== Exercício  59 =====
+=========================""")
+print("-=-=-=-=- Calculadora simples -=-=-=-=-")
+
+
+while True:
+    n1 = float(input("Digite o primeiro número: "))
+    n2 = float(input("Digite o segundo número: "))
+    operacao = int(input('''Qual operação você deseja fazer?
+[1] somar
+[2] multiplicar
+[3] maior
+[4] novos números
+[5] sair do programa
+Sua escolha: '''))
+    if operacao == 1:
+        print(f'A soma dos numeros {n1:.2f} e {n2:.2f} é: {n1+n2:.2f}')
+    elif operacao == 2:
+        print(f' o produto da multiplicação entre {n1:.2f} e {n2:.2f} é : {n1*n2:.2f}')
+    elif operacao == 3:
+        if n1>n2:
+            print(f"O número {n1:.2f} é maior!!!")
+        elif n1<n2:
+            print(f"O numero {n2:.2f} é maior!!!")
+        else:
+            print("Os números são iguais")
+    elif operacao == 4:
+        pass
+    elif operacao == 5:
+        break
+    else:
+        print("Opção inválida, tente outra vez!")
+
+        
+    
+
+print("="*25)
+
+print("""===== Exercício  60 =====
+=========================""")
+print("-=-=-=-=- Calculadora Fatorial -=-=-=-=-")
+
+n = int(input("Qual é o número que você deseja fatorar? "))
+resultado = 1
+
+print(f'Calculando o fatorial de {n}! ', end='')
+while n>0:
+    resultado *= n
+    print(f'{n}',end='')
+    print('x'if n>1 else ' = ', end='')
+    n-=1
+    
+    
+print(f"{resultado}")
+    
+
+print("="*25)
+
+print("""===== Exercício  61 =====
+=========================""")
+print("-=-=-=-=- 10 primeiros termos da P.A.  -=-=-=-=-")
+n1=int(input("Digite o numero que vai iniciar a P.A.: "))
+ns=int(input("Digite a razão da  P.A.: "))
+termos = 1
+while termos < 11:
+    print(f'{n1}',end="")
+    print('=> 'if termos < 10 else " FIM", end="")
+    n1+=ns
+    termos+=1
+
+
+print('\n',"="*25)
+
+print("""===== Exercício  62 =====
+=========================""")
+print("-=-=-=-=- 10 primeiros termos da P.A.  -=-=-=-=-")
+n1=int(input("Digite o numero que vai iniciar a P.A.: "))
+ns=int(input("Digite a razão da  P.A.: "))
+
+escolha ="o"
+
+while escolha[0] != "N":
+    termos = 1
+    while termos < 11:
+        print(f'{n1}',end="")
+        print('=> 'if termos < 10 else " FIM", end="")
+        n1+=ns
+        termos+=1
+    escolha = input("\nDeseja continuar? ").upper()
+print("Fim da PA")
+    
+
+
+print('\n',"="*25)
+
+print("""===== Exercício  62 =====
+=========================""")
+print("-=-=-=-=-  termos da P.A.  -=-=-=-=-")
+n1=int(input("Digite o numero que vai iniciar a P.A.: "))
+ns=int(input("Digite a razão da  P.A.: "))
+escolha ="o"
+cont =1
+total=0
+mais =10
+
+
+while escolha[0] != "N":
+    total+=mais
+    
+    while total >= cont:
+        print(f'{n1}',end="")
+        print('=> 'if total > cont else " Pausa", end="")
+        n1+=ns
+        cont+=1
+        
+    escolha = input("\nDeseja continuar? ").upper()
+    if escolha[0] !="N":
+        mais = int(input('Deseja ver mais quantos termos? '))
+print(f"Fim da PA com {total} termos")
+
+
+
+print('\n',"="*25)
+
+print("""===== Exercício  63 =====
+=========================""")
+print("-=-=-=-=-  termos da P.A.  -=-=-=-=-")
+n=int(input("Digite o numero que vai iniciar a P.A.: "))
+termo = 0
+termoa = 0
+termob = 1
+print(f"Os {n} primeiros termos da sequencia de Fibonacci são:")
+while termo < n:
+    if termo ==0:
+        print("0", end="")
+    elif termo == 1:
+        print("1",end="")
+    else:
+        atual = termoa+termob
+        print(atual, end="")
+        termoa = termob
+        termob = atual
+    print("=>"if termo<(n-1) else " FIM", end="")
+    termo+=1
+    
+
+
+
+
+
+
+print('\n',"="*25)print("""===== Exercício  64 =====
+=========================""")
+print("-=-=-=-=-  termos fibonacci.  -=-=-=-=-")
+n=int(input("Quantos termos você quer ver?: "))
+termo = 0
+termoa = 0
+termob = 1
+print(f"Os {n} primeiros termos da sequencia de Fibonacci são:")
+while termo < n:
+    if termo ==0:
+        print("0", end="")
+    elif termo == 1:
+        print("1",end="")
+    else:
+        atual = termoa+termob
+        print(atual, end="")
+        termoa = termob
+        termob = atual
+    print("=>"if termo<(n-1) else " FIM", end="")
+    termo+=1 
+
+
+
+
+
+
+print('\n',"="*25)
+
+print("""===== Exercício  64 =====
+=========================""")
+print("-=-=-=-=-  tratando vários valores  -=-=-=-=-")
+soma = contador = 0
+while True:
+    n=int(input("Digite um número: "))
+    if n == 999:
+        break
+    soma +=n
+    contador+=1
+print(f'Foram digitados {contador} valores resultando em uma soma de {soma}')
+
+print('\n',"="*25)
+
+print("""===== Exercício  65 =====
+=========================""")
+print("-=-=-=-=-  tratando vários valores  -=-=-=-=-")
+soma = maior = menor =contador = 0
+while True:
+    n=int(input("Digite um número:"))
+    if contador ==0:
+        maior = menor = n
+    else:
+        if maior<n:
+            maior=n
+        elif maior>n:
+            pass
+        if menor<n:
+            pass
+        elif menor>n:
+            menor = n
+    soma +=n
+    contador+=1
+    continuar = str(input("Você quer continuar? [S/N]")).upper().strip()
+    if continuar[0] =="N":
+        break
+
+media = soma/contador
+print(f'Foram digitados {contador} valores resultando em uma soma de {soma}\nO maior numero digitado foi: {maior}\nO menor número digitado foi: {menor}\nE a média entre eles foi de {media:.2f}')
+
+print('\n',"="*25)
+
+
+print("""===== Exercício  66 =====
+=========================""")
+#Já tinha feito assim  no 64 antes por já conhecer o break
+print("-=-=-=-=-  tratando vários valores  -=-=-=-=-")
+soma = contador = 0
+while True:
+    n=int(input("Digite um número: "))
+    if n == 999:
+        break
+    soma +=n
+    contador+=1
+print(f'Foram digitados {contador} valores resultando em uma soma de {soma}')
+
+print('\n',"="*25)
+
+print("""=====================
+=== Exercício 67 ===
+""")
+print("-=-=-=-=-  Tabuada 3.0 -=-=-=-=-")
+while True:
+    base = int(input("Digite um número para saber a sua tabuada: "))
+    if base < 0:
+        print("Favor digitar um número positivo!!!")
+    else:
+        print("="*5,f"Tabuada do {base:2}","="*5)
+        for i in range(11):
+            print("="*5,f"{base:2} X {i:2} = {base*i:3}","="*5)
+        continuar = input("Deseja ver mais uma tabuada? ").upper().strip()
+        if continuar[0] =="N":
+            break
+        elif base>=0:
+            print('Então, por favor, ', end='')
+print("="*25)
+
+import random
+print("""=====================
+=== Exercício 68 ===
+""")
+print("-=-=-=-=-  Vamos Jogar par ou impar  -=-=-=-=-")
+contador = 0
+while True:
+    player = int(input("Escolha seu número: "))
+    pc = random.randint(1,2)
+    escolha = int(input('''Você quer par ou impar?
+[1] - par 
+[2] - Impar
+Sua escolha: '''))
+    res = "Deu par" if (pc+player)%2 ==0 else "Deu impar"
+    if (pc+player)%2 ==0 and escolha ==1 or (pc+player)%2 !=0 and escolha ==2:
+        contador +=1
+        print(f"Você escolheu {player} e eu {pc}.\n{res} você ganhou ")
+    else:
+        print(f"Você escolheu {player} e eu {pc}.\n{res} você perdeu ")
+        break
+print(f"Você ganhou {contador} vezes")
+    
+print("="*25)
+
+print("""===== Exercício  69 =====
+=========================""")
+print("-=-=-=-=- Analisador completo  -=-=-=-=-")
+
+maiorIdade = 0
+maisVelho = ""
+homens = 0
+mulheres = 0
+nda =0
+mulherAbaixo =0
+somaIdade =0
+continuar="Sim"
+while True:
+    nome = input(f"Qual é o {i+1}º nome? ")
+    idade = int(input("Qual é a idade? "))
+    genero = input(f"Qual é o gênero? M= masculino F = Feminino").strip().upper()
+    somaIdade += idade
+    if genero == "M":
+        homens+=1
+    elif genero == "F":
+        mulheres +=1
+    else:
+        nda+=1
+        
+    if maiorIdade < idade and genero == "M":
+        maisVelho = nome
+    
+    if idade>20 and genero == "f":
+        mulherAbaixo +=1
+    continuar = genero = input(f"Deseja continuar? ").strip().upper()
+    if continuar[0] =="N":
+        break
+
+print(f"Ao todo são {homens} homens, {mulheres} mulheres {nda} não binários.\nO homem mais velho é {maisVelho} e temos {mulherAbaixo} mulher(es) com menos de 20 anos")
+'''
+A) quantas pessoas tem mais de 18 anos.
+
+B) quantos homens foram cadastrados.
+
+C) quantas mulheres tem menos de 20 anos.
+'''
+    
+    
+print("="*25)
+
+print("""===== Exercício  70 =====
+=========================""")
+print("-=-=-=-=- Analisador de compras-=-=-=-=-")
+
+contador =0
+proBarato = ''
+pro1000 = 0
+valorTotal = 0
+valorProBarato = 0
+while True:
+    continuar = 'x'
+    item = input('Digite o nome do item: ')
+    valor= float(input('Digite o valor do item: R$'))
+    if contador == 0:
+        proBarato = item
+        valorProBarato = valor
+    elif valorProBarato>valor:
+        proBarato = item
+        valorProBarato = valor
+    if valor>1000:
+        pro1000+=1
+    contador +=1
+    valorTotal += valor
+    while continuar[0] not in "SN":
+        continuar = input('Deseja continuar? [S/N]').upper().strip()
+    if continuar[0]=='N':
+        break
+     
+print(f'Compra com {contador} produtos no valor de R${valorTotal:.2f} ')
+print(f'Temos {pro1000} que custou mais de R$1000.00')
+print(f'O produto mais barato custou foi  o produto {proBarato} e custou R${valorProBarato:.2f}' )
+print("="*25)
