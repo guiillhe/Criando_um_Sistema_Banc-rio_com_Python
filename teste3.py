@@ -1338,3 +1338,291 @@ Tenha um bom dia!!!
 ''')
 
 print("="*25)
+
+print("""===== Exercício  72 =====
+=========================""")
+print("-=-=-=-=- Números por extenso -=-=-=-=-")
+while True:
+    while True:
+        numero = int(input('Digite um número entre 0 e 20: '))
+        if numero >-1 and numero<21:
+            break
+
+    numeros = ('zero','um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez','onze','doze','treze','quatorze','quinze','dezesseis','dezessete','dezoito','dezenove','20')
+    print(f"Você digidou o número {numeros[numero]}")
+    continuar = input("Deseja continuar? ").upper().strip()
+    if continuar[0] =="N":
+        break
+
+print("Obrigado por utilizar nosso sistema")
+    
+
+print("="*25)
+
+print("""===== Exercício  72 =====
+=========================""")
+print("-=-=-=-=- Brasileirão -=-=-=-=-")
+times = ('Palmeiras','Internacional','Fluminense','Corinthians','Flamengo','Athletico-PR','Atlétic-MG','Fortaleza','São Paulo','América-MG','Botafogo','Santos','Goiás','Red Bull Bragantino','Coritiba','Cuiabá','Ceará','Atlético-GO','Avaí','Juventude')
+
+print(f'Os 5 primeiros times são : ', end="")
+for time in range(5):
+    print(times[time], end=", " if time<4 else ".\n")
+
+print('Os últimos 4 colocados são: ', end="")
+for time in range(1,5):
+	print(times[-time], end=", " if time<4 else ".\n")
+
+print(f'Os times em ordem alfabética: ', end="")
+for lp,time in enumerate(sorted(times)):
+    print(time, end=", " if (lp+1) <len(times) else ".\n")
+   
+
+print(f"O Botafogo está em {times.index('Botafogo')+1}º lugar")
+
+print("=-="*25)
+
+import random as rd
+print("""===== Exercício  74 =====
+=========================""")
+print("-=-=-=-=- Brasileirão -=-=-=-=-")
+numeros =(rd.randint(0,9),rd.randint(0,9),rd.randint(0,9),rd.randint(0,9),rd.randint(0,9))
+print("Os números sorteados foram: ", end="")
+for i, num in enumerate(numeros):
+    print(num, end=", " if i<4 else ".\n")
+
+print(f'O maior número sorteado foi o número : {max(numeros)}')
+print(f'O Menor número sorteado foi o número :{min(numeros)}')
+print("=-="*25)
+
+print("""===== Exercício  75 =====
+=========================""")
+pares=0
+print("-=-=-=-=- análise  -=-=-=-=-")
+nums = (int(input("Digite o primeiro numero: ")),
+int(input("Digite o segundo numero: ")),
+int(input("Digite o terceiro numero: ")),
+int(input("Digite o Quarto numero: ")))
+
+print(f'O valor 9 aparece {nums.count(9)} vezes.')
+if nums.count(3)>0:
+    print(f'O numero 3 aparece pela primeira vez na {nums.index(3)+1}ª Posição.')
+else:
+    print('O número 3 não aparece na tupla')
+print('Os números pares são: ', end="")
+for num in nums:
+    if num%2 ==0:
+        print(num, end=" ")
+        pares +=1
+if pares ==0:
+    print('não tem números pares na lista')
+print("\n")
+print("=-="*25)
+
+print(f'{"":=^30}')
+print(f'{"-Exercício 76-":=^30}')
+print(f'{"":=^30}')
+print(f'{"-TABELA DE PREÇOS-":=^30}')
+print(f'{"":=^30}')
+lista =('lápis',1.75,'Borracha',2.00,'Caderno',15.90,'Estojo',25.00,'compasso',9.90)
+for n,i in enumerate(lista):
+	if n%2==0:
+    		print(f'{i:.<20}',"R$:", end="")
+	else:
+    		print(f'{i:6.2f}')
+
+print(f'{"":=^30}')
+print(f'{"":=^50}')
+print(f'{"-Exercício 77-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-CONTADOR DE VOGAIS-":=^50}')
+print(f'{"":=^50}')
+lista =('Borracha','Caderno','Estojo','compasso','lapis')
+for i in lista:
+    print(f'A palavra {i} tem as vogais: ', end="")
+    for n, letra in enumerate(i):
+        if letra.lower() in 'aeiou':
+            print(f'{letra}', end=" " if n+1<len(i) else ".\n")
+    if i[-1].lower() not in 'aeiou':
+        print(" .")
+    
+	
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 78-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-Analisador de números-":=^50}')
+print(f'{"":=^50}')
+numeros = []
+pos = 0
+while True:
+  numeros.append(int(input(f"Digite um número para a posição {pos}: ")))
+  pos+=1
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()
+  if deseja[0] =="N":
+    break
+
+menor = min(numeros)
+xmenor= numeros.count(menor)
+maior = max(numeros)
+xmaior = numeros.count(maior)
+print(f'Você digitou os valores {numeros}')
+if menor == maior:
+  print(f'todos os {len(numeros)} numeros digitados são iguais.')
+else:
+  print(f'O menor número digitado foi o {menor} e aparece {xmenor} vezes, e aparece na(s) posições:  ', end="")
+  for i,v in enumerate(numeros):
+    if v==menor:
+      print(i, end="... ")
+    
+  print("\n")
+  print(f'O menor número digitado foi o {maior} e aparece {xmaior} vezes ')
+  for i,v in enumerate(numeros):
+    if v==maior:
+      print(i, end="... ")
+    
+  print("\n")
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 78-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-CONTADOR DE VOGAIS-":=^50}')
+print(f'{"":=^50}')
+numeros = []
+pos = 0
+while True:
+  numero = (int(input("Digite um número: ")))
+  if numero not in numeros:
+    numeros.append(numero)
+    print("Número adicionado com sucesso...")
+  else:
+    print("NÚMERO REPETIDO NÃO ADICIONADO")
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()
+  if deseja[0] =="N":
+    break
+print(f'os números da lista são {sorted(numeros)}')
+
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 79-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-lista sem repetições-":=^50}')
+print(f'{"":=^50}')
+numeros = []
+pos = 0
+while True:
+  numero = (int(input("Digite um número: ")))
+  if numero not in numeros:
+    numeros.append(numero)
+    print("Número adicionado com sucesso...")
+  else:
+    print("NÚMERO REPETIDO NÃO ADICIONADO")
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()
+  if deseja[0] =="N":
+    break
+print(f'os números da lista são {sorted(numeros)}')
+
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 80-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-lista sem repetições  e sem o sorted-":=^50}')
+print(f'{"":=^50}')
+numeros = []
+pos = 0
+while True:  
+  numero = (int(input("Digite um número: ")))
+  if numero not in numeros:
+    if pos == 0 or numero > numeros[-1]:
+      numeros.append(numero)
+    else:
+      for i, n in enumerate(numeros):
+        if numero <n:
+          numeros.insert(i,numero)
+          break                  
+    print("Número adicionado com sucesso...")
+    pos+=1
+  else:
+    print("NÚMERO REPETIDO NÃO ADICIONADO")
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()
+  if deseja[0] =="N":
+    break
+print(f'os números da lista são {numeros}')
+
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 81-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-Extraindo dados de uma lista-":=^50}')
+print(f'{"":=^50}')
+numeros = []
+count = 0
+while True:  
+  numeros.append(int(input("Digite um número: ")))
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()
+  count+=1
+  if deseja[0] =="N":
+    break
+print(f'os números da lista são {sorted(numeros, reverse = True)}')
+print(f'Foram digitados {count} números no total')
+if 5 in numeros:
+  print(f'O número 5 foi digitado {numeros.count(5)} vezes ao todo')
+else:
+  print("O número 5 não foi digitado nenhuma vez")
+
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 82-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-Três listas-":=^50}')
+print(f'{"":=^50}')
+numeros = []
+pares=[]
+impares = []
+count = 0
+while True:  
+  numero = int(input("Digite um número: "))
+  numeros.append(numero)
+  if numero%2== 0:
+    pares.append(numero)
+  else:
+    impares.append(numero)
+
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()
+  count+=1
+  if deseja[0] =="N":
+    break
+print(f'os números da lista são {sorted(numeros)}')
+print(f'Foram digitados {count} números no total')
+print(f'O numeros pares digitados foram {sorted(pares)} ')
+print(f'Os números impares digitados foram {sorted(impares)}')
+
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 83-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-Validador de expressão-":=^50}')
+print(f'{"":=^50}')
+
+expressao =str(input("Digite uma expressão matemática : "))
+abre = expressao.count("(")
+fecha = expressao.count(")")
+if abre == fecha and expressao.index(")") > expressao.index("("):
+  print("Sua expressão está correta")
+else:
+  print("Sua expressão está ERRADA")
+
+
+print(f'{"":=^50}')
