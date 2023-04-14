@@ -1626,3 +1626,66 @@ else:
 
 
 print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 84-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-LISTA COMPOSTA PESO-":=^50}')
+print(f'{"":=^50}')
+pessoas = []
+count= 0
+menor_peso = 0
+maior_peso = 0
+while True:
+  nome = input("Nome: ")
+  peso = float(input("Peso: "))
+  pessoas.append([nome,peso])
+  count+=1
+  if count ==1:
+      menor_peso = maior_peso = peso
+  elif peso < menor_peso:
+      menor_peso = peso
+  elif peso > maior_peso:
+      maior_peso = peso
+  deseja = input("Deseja continuar?[S/N] ").upper().strip()  
+  if deseja[0] =="N":
+    break
+print(f"Temos ao todo {count} pessoas")
+print(f'''O menor peso é {maior_peso:.2f}Kg.
+As seguntes pessoas tem esse peso: ''', end="")
+for i, p in enumerate(pessoas):
+    if pessoas[i][1] == maior_peso:
+        print(pessoas[i][0], end=" ")
+print(".\n")
+print(f'''O menor peso é {menor_peso:.2f}Kg.
+As seguntes pessoas tem esse peso: ''', end="")
+for i, p in enumerate(pessoas):
+    if pessoas[i][1] == menor_peso:
+        print(pessoas[i][0], end=" ")
+print(".\n")
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 85-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-LISTA COM PARES E ÍMPARES-":=^50}')
+print(f'{"":=^50}')
+lista = [[],[]]
+
+for i in range(7):
+    numero = int(input(f"Digite o {i+1}º numero: "))
+    if numero % 2 ==0:
+        lista[0].append(numero)
+    elif numero % 2 !=0:
+        lista[1].append(numero)
+print(f'Os Valores pares digitados foram {sorted(lista[0])} .')
+print(f'Os Valores impares digitados foram {sorted(lista[1])} .')
+
+    
+print(f'{"":=^50}')
+
+print(f'{"":=^50}')
+print(f'{"-Exercício 85-":=^50}')
+print(f'{"":=^50}')
+print(f'{"-LISTA COM PARES E ÍMPARES-":=^50}')
+print(f'{"":=^50}')
